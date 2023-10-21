@@ -1,6 +1,7 @@
 ***SIMPLE QMK Configurator converter from JSON to C keymap file***
 
 I built this simple tool to convert json file from QMK online configurator and write it to my keymap.c as I use OLED and other functions that are not working with JSON keymaps.
+You need to specify your layer names in the command, it will write them in the order of the JSON file.
 
 **USAGE**
 
