@@ -7,7 +7,7 @@ You need to specify your layer names in the command, it will write them in the o
 
 1. Clone this repository to your local machine.
 
-2. Open a terminal and navigate to the directory where the `replace_keymaps_in_c_file.py` script is located.
+2. Open a terminal and navigate to the directory where the `json2c.py` script is located.
 
 3. Run the script with the following command:
 ```bash
