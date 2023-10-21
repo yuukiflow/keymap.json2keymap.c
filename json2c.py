@@ -2,18 +2,6 @@ import json
 import argparse
 import re
 
-def read_existing_code(c_file):
-    # Read the existing C code from the file
-    with open(c_file, 'r') as c_file:
-        content = c_file.read()
-    
-    # Find the position after the keymaps declaration
-    keymaps_pos = content.find('const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS]')
-    if keymaps_pos == -1:
-        raise ValueError("Keymaps declaration not found in the existing C code.")
-    
-    return content[keymaps_pos:]
-
 def generate_c_code(json_file_path, new_layer_names):
     with open(json_file_path, 'r') as json_file:
         config = json.load(json_file)
@@ -63,9 +51,6 @@ def main():
     parser.add_argument("--new_layers", nargs='+', help="New layer names", required=True)
 
     args = parser.parse_args()
-
-    # Read the existing code from the C file
-    existing_code = read_existing_code(args.c_file)
 
     # Generate the new C code, replacing the keymaps section
     c_code = generate_c_code(args.json_file, args.new_layers)
